@@ -1,0 +1,99 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zhao Jerry, Zhao, LIC=RC93N-YDTKE-DY4V3-AMI4T-6LJ2X-UECUB
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\File\Documents\GraduationDesign\test\KeilProject\DS18B20-OLED\USER\STM32_CGMCU.uvprojx
+Project File Date:  12/17/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'DS18B20'
+../CORE/core_cm3.c(465): error: parameter references not allowed in naked functions
+  465 |     : : "r" (topOfProcStack) // Input parameter (topOfProcStack) mapped to r0
+      |              ^
+../CORE/core_cm3.c(459): note: attribute is here
+  459 | void __set_PSP(uint32_t topOfProcStack) __attribute__((naked));
+      |                                                        ^
+../CORE/core_cm3.c(500): error: parameter references not allowed in naked functions
+  500 |     : : "r" (topOfMainStack) // Input parameter (topOfMainStack) mapped to r0
+      |              ^
+../CORE/core_cm3.c(494): note: attribute is here
+  494 | void __set_MSP(uint32_t topOfMainStack) __attribute__((naked));
+      |                                                        ^
+2 errors generated.
+compiling core_cm3.c...
+../SYSTEM/sys/sys.c(19): error: expected '(' after 'asm'
+   19 | __asm void MSR_MSP(u32 addr) 
+      |       ^
+../SYSTEM/sys/sys.c(19): error: expected ';' after top-level asm block
+   19 | __asm void MSR_MSP(u32 addr) 
+      |      ^
+      |      ;
+../SYSTEM/sys/sys.c(21): error: use of undeclared identifier 'MSR'
+   21 |     MSR MSP, r0                         //set Main Stack value
+      |     ^
+3 errors generated.
+compiling sys.c...
+compiling usart.c...
+compiling system_stm32f10x.c...
+compiling stm32f10x_it.c...
+compiling delay.c...
+compiling led.c...
+compiling misc.c...
+main.c(39): warning: passing 'char[14]' to parameter of type 'u8 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   39 |                 OLED_ShowString(0,0,"DS18B20 Error",16,1);
+      |                                     ^~~~~~~~~~~~~~~
+../HARDWARE/OLED\OLED.h(55): note: passing argument to parameter 'chr' here
+   55 | void OLED_ShowString(u8 x,u8 y,u8 *chr,u8 size1,u8 mode);
+      |                                    ^
+main.c(41): warning: passing 'char[9]' to parameter of type 'u8 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   41 |                 OLED_ShowString(60,0,"        " ,16,1); 
+      |                                      ^~~~~~~~~~
+../HARDWARE/OLED\OLED.h(55): note: passing argument to parameter 'chr' here
+   55 | void OLED_ShowString(u8 x,u8 y,u8 *chr,u8 size1,u8 mode);
+      |                                    ^
+2 warnings generated.
+compiling main.c...
+assembling startup_stm32f10x_md.s...
+compiling ds18b20.c...
+compiling oled.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+".\Objects\STM32_CGMCU.axf" - 5 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:/Keil_v5/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp
+"oledtest\startup_stm32f429xx.o"
+"oledtest\main.o"
+"oledtest\gpio.o"
+"oledtest\stm32f4xx_it.o"
+"oledtest\stm32f4xx_hal_msp.o"
+"oledtest\oled.o"
+"oledtest\stm32f4xx_hal_tim.o"
+"oledtest\stm32f4xx_hal_tim_ex.o"
+"oledtest\stm32f4xx_hal_rcc.o"
+"oledtest\stm32f4xx_hal_rcc_ex.o"
+"oledtest\stm32f4xx_hal_flash.o"
+"oledtest\stm32f4xx_hal_flash_ex.o"
+"oledtest\stm32f4xx_hal_flash_ramfunc.o"
+"oledtest\stm32f4xx_hal_gpio.o"
+"oledtest\stm32f4xx_hal_dma_ex.o"
+"oledtest\stm32f4xx_hal_dma.o"
+"oledtest\stm32f4xx_hal_pwr.o"
+"oledtest\stm32f4xx_hal_pwr_ex.o"
+"oledtest\stm32f4xx_hal_cortex.o"
+"oledtest\stm32f4xx_hal.o"
+"oledtest\stm32f4xx_hal_exti.o"
+"oledtest\system_stm32f4xx.o"
+--strict --scatter "oledtest\oledtest.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "oledtest.map" -o oledtest\oledtest.axf
